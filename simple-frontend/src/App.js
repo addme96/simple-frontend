@@ -1,7 +1,6 @@
 import React from "react";
 import logo from './logo.svg';
 import './App.css';
-import './components/GridResources'
 import GridResources from "./components/GridResources";
 
 class App extends React.Component {

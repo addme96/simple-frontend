@@ -1,5 +1,5 @@
 import React from "react";
-import {DataGrid, GridColDef} from "@mui/x-data-grid";
+import {DataGrid} from "@mui/x-data-grid";
 
 class GridResources extends React.Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class GridResources extends React.Component {
             );
         }
 
-        const columns: GridColDef[] = [
+        const columns = [
             { field: 'id', headerName: 'ID', width: 100 },
             { field: 'name', headerName: 'Resource Name', width: 300 },
         ];
