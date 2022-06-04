@@ -30,7 +30,6 @@ class GridResources extends React.Component {
                     columns={columns}
                     pageSize={5}
                     rowsPerPageOptions={[5]}
-                    checkboxSelection
                 />
             </div>
         );
