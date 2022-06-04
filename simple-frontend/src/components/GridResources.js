@@ -37,7 +37,6 @@ class GridResources extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout("", 100000);
         fetch(process.env.REACT_APP_BACKEND_DNS_NAME + "/resources")
             .then(response => response.json())
             .then(data => this.setState({
