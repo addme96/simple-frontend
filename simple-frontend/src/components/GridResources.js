@@ -1,5 +1,6 @@
 import React from "react";
 import {DataGrid} from "@mui/x-data-grid";
+import ResourceRepo from "../backend/resource";
 
 class GridResources extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class GridResources extends React.Component {
             resources: [],
             loaded: false
         }
+        this.resourceRepo = new ResourceRepo()
     }
     render() {
         const {loaded, resources} = this.state;
@@ -36,9 +38,7 @@ class GridResources extends React.Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_BACKEND_DNS_NAME + "/resources")
-            .then(response => response.json())
-            .then(data => this.setState({
+        this.resourceRepo.list().then(data => this.setState({
                 resources: data,
                 loaded: true
             }));
