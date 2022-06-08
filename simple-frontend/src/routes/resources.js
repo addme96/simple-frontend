@@ -1,5 +1,5 @@
 import GridResources from "../components/GridResources";
-
+import {Outlet} from "react-router-dom";
 export default function Resources() {
     return (
         <div>
@@ -8,6 +8,7 @@ export default function Resources() {
                 PostgreSQL DB.
             </p>
             <GridResources/>
+            <Outlet />
         </div>
     );
 }
