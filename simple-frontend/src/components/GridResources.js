@@ -33,8 +33,8 @@ class GridResources extends React.Component {
                 field: 'name',
                 headerName: 'Resource Name',
                 width: 300,
-                renderCell: (resource) => (
-                    <Link to={`${resource.id}`} key={resource.id}>r.name</Link>
+                renderCell: (obj) => (
+                    <Link to={`${obj.row.id}`} key={obj.row.id}>{obj.row.name}</Link>
                 )
             },
         ];
