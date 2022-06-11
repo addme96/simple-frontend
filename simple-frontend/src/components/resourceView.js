@@ -3,10 +3,9 @@ import ResourceRepo from "../backend/resource";
 
 class ResourceView extends React.Component {
     constructor(props) {
-        console.log("Creating resourceView with ID:" + props.id)
         super(props);
         this.state = {
-            resource: {id: props.id},
+            resource: null,
             loaded: false
         }
         this.resourceRepo = new ResourceRepo()
@@ -21,7 +20,6 @@ class ResourceView extends React.Component {
                 </div>
             );
         }
-
         return (
             <div style={{height: 400, width: '100%', color: "black", backgroundColor: "whitesmoke"}}>
                 <p>ID: {resource.id}</p>
@@ -31,7 +29,7 @@ class ResourceView extends React.Component {
     }
 
     componentDidMount() {
-        this.resourceRepo.get(this.state.resource.id).then(resource => this.setState({
+        this.resourceRepo.get(this.props.id).then(resource => this.setState({
             resource: resource,
             loaded: true
         }));
