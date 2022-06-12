@@ -1,24 +1,42 @@
 import React from "react";
 import logo from './logo.svg';
 import './App.css';
-import {Link, Outlet} from "react-router-dom"
+import {NavLink, Outlet} from "react-router-dom"
 class App extends React.Component {
     render() {
         return (
             <div className="App">
                 <header className="App-header">
                     <nav>
-                        <ul>
+                        <ol>
                             <li>
-                                <Link to="/">Home</Link>
+                                <NavLink to="/" style={({ isActive }) => {
+                                    return {
+                                        display: "block",
+                                        margin: "1rem 0",
+                                        color: isActive ? "red" : "white",
+                                    };
+                                }}>Home</NavLink>
                             </li>
                             <li>
-                                <Link to="/resources">Resources</Link>
+                                <NavLink to="/resources" style={({ isActive }) => {
+                                    return {
+                                        display: "block",
+                                        margin: "1rem 0",
+                                        color: isActive ? "red" : "white",
+                                    };
+                                }}>Resources</NavLink>
                             </li>
                             <li>
-                                <Link to="/about">About</Link>
+                                <NavLink to="/about" style={({ isActive }) => {
+                                    return {
+                                        display: "block",
+                                        margin: "1rem 0",
+                                        color: isActive ? "red" : "white",
+                                    };
+                                }}>About</NavLink>
                             </li>
-                        </ul>
+                        </ol>
                     </nav>
                     <img src={logo} className="App-logo" alt="logo"/>
                     <p>

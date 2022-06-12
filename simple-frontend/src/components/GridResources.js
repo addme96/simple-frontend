@@ -1,7 +1,7 @@
 import React from "react";
 import {DataGrid} from "@mui/x-data-grid";
 import ResourceRepo from "../backend/resource";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 class GridResources extends React.Component {
     constructor(props) {
@@ -34,7 +34,13 @@ class GridResources extends React.Component {
                 headerName: 'Resource Name',
                 width: 300,
                 renderCell: (obj) => (
-                    <Link to={`${obj.row.id}`} key={obj.row.id}>{obj.row.name}</Link>
+                    <NavLink to={`${obj.row.id}`} key={obj.row.id} style={({ isActive }) => {
+                        return {
+                            display: "block",
+                            margin: "1rem 0",
+                            color: isActive ? "red" : "",
+                        };
+                    }}>{obj.row.name}</NavLink>
                 )
             },
         ];
