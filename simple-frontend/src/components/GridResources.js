@@ -14,6 +14,7 @@ class GridResources extends React.Component {
     }
 
     render() {
+        let location = this.props.location;
         const {loaded, resources} = this.state;
         if (!loaded) {
             return (
@@ -34,13 +35,19 @@ class GridResources extends React.Component {
                 headerName: 'Resource Name',
                 width: 300,
                 renderCell: (obj) => (
-                    <NavLink to={`${obj.row.id}`} key={obj.row.id} style={({ isActive }) => {
-                        return {
-                            display: "block",
-                            margin: "1rem 0",
-                            color: isActive ? "red" : "",
-                        };
-                    }}>{obj.row.name}</NavLink>
+                    <NavLink to={`${obj.row.id}`}
+                             key={obj.row.id}
+                            // This is the trick! Set the `backgroundLocation` in location state
+                            // so that when we open the modal we still see the current page in
+                            // the background.
+                             state={{ backgroundLocation: location }}
+                             style={({isActive}) => {
+                                 return {
+                                     display: "block",
+                                     margin: "1rem 0",
+                                     color: isActive ? "red" : "",
+                                 };
+                             }}>{obj.row.name}</NavLink>
                 )
             },
         ];

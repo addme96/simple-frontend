@@ -1,11 +1,18 @@
 import React from "react";
 import logo from './logo.svg';
 import './App.css';
-import {NavLink, Outlet, Route, Routes} from "react-router-dom"
+import {NavLink, Outlet, Route, Routes, useLocation} from "react-router-dom"
 import Resources from "./routes/resources";
 import Resource from "./routes/resource";
 import About from "./routes/about";
+import Modal from "./components/modal";
 export default function App() {
+    let location = useLocation();
+
+    // The `backgroundLocation` state is the location that we were at when one of
+    // the resources links was clicked. If it's there, use it as the location for
+    // the <Routes> so we show the resources grid in the background, behind the modal.
+    let state =  { backgroundLocation: location.state};
         return (
             <div className="App">
                 <header className="App-header">
@@ -14,7 +21,7 @@ export default function App() {
                         Hello!
                     </p>
                 </header>
-                <Routes>
+                <Routes location={state?.backgroundLocation || location}>
                     <Route path="/" element={<Layout />}>
                         <Route path="resources" element={<Resources/>}>
                             <Route path=":resourceID" element={<Resource/>}/>
@@ -30,6 +37,13 @@ export default function App() {
                         />
                     </Route>
                 </Routes>
+
+                {/* Show the modal when a `backgroundLocation` is set */}
+                {state?.backgroundLocation && (
+                    <Routes>
+                        <Route path="/resources/:resourceID" element={<Modal />} />
+                    </Routes>
+                )}
             </div>
         );
 }
