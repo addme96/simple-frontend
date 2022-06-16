@@ -8,7 +8,6 @@ export default function Resources() {
                 PostgreSQL DB.
             </p>
             <GridResources/>
-            <Outlet />
         </div>
     );
 }
