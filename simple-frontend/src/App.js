@@ -1,5 +1,4 @@
 import React from "react";
-import logo from './logo.svg';
 import './App.css';
 import {NavLink, Outlet, Route, Routes, useLocation} from "react-router-dom"
 import Resources from "./routes/resources";
@@ -15,21 +14,19 @@ export default function App() {
     let state =  { backgroundLocation: location.state};
         return (
             <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
-                        Hello!
-                    </p>
-                </header>
+                {/*<header className="App-header">*/}
+                {/*    <img src={logo} className="App-logo" alt="logo"/>*/}
+                {/*    <p>*/}
+                {/*        Hello!*/}
+                {/*    </p>*/}
+                {/*</header>*/}
                 <Routes location={state?.backgroundLocation || location}>
                     <Route path="/" element={<Layout />}>
                         <Route path="resources" element={<Resources/>}>
                             <Route path=":resourceID" element={<Resource/>}/>
                         </Route>
                         <Route path="about" element={<About/>}/>
-                        <Route
-                            path="*"
-                            element={
+                        <Route path="*" element={
                                 <main style={{padding: "1rem"}}>
                                     <p>There's nothing here!</p>
                                 </main>
