@@ -30,7 +30,7 @@ const ResourcesList = () => (
         <Datagrid bulkActionButtons={false}>
             <TextField source="id"/>
             <TextField source="name"/>
-            <EditButton />
+            <EditButton/>
         </Datagrid>
     </List>
 );
@@ -38,8 +38,8 @@ const ResourcesList = () => (
 const ResourceEdit = () => (
     <Edit>
         <SimpleForm>
-            <TextInput source="id" />
-            <TextInput source="name" />
+            <TextInput source="id"/>
+            <TextInput source="name"/>
         </SimpleForm>
     </Edit>
 )
@@ -47,7 +47,7 @@ const ResourceEdit = () => (
 const ResourceCreate = () => (
     <Create>
         <SimpleForm>
-            <TextInput source="name" />
+            <TextInput source="name"/>
         </SimpleForm>
     </Create>
 )
