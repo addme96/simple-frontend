@@ -22,7 +22,7 @@ export default function App() {
             </Admin>
         </div>
     );
-}
+};
 
 
 const ResourcesList = () => (
@@ -42,7 +42,7 @@ const ResourceEdit = () => (
             <TextInput source="name"/>
         </SimpleForm>
     </Edit>
-)
+);
 
 const ResourceCreate = () => (
     <Create>
@@ -50,4 +50,4 @@ const ResourceCreate = () => (
             <TextInput source="name"/>
         </SimpleForm>
     </Create>
-)
+);
