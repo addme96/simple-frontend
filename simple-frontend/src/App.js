@@ -38,8 +38,8 @@ const ResourcesList = () => (
 const ResourceEdit = () => (
     <Edit>
         <SimpleForm>
-            <TextInput source="id"/>
-            <TextInput source="name"/>
+            <TextInput source="id" name="id"/>
+            <TextInput source="name" name="name"/>
         </SimpleForm>
     </Edit>
 );
@@ -47,7 +47,7 @@ const ResourceEdit = () => (
 const ResourceCreate = () => (
     <Create>
         <SimpleForm>
-            <TextInput source="name"/>
+            <TextInput source="name" name="name"/>
         </SimpleForm>
     </Create>
 );
