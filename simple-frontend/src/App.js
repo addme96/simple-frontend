@@ -26,7 +26,7 @@ export default function App() {
 
 
 const ResourcesList = () => (
-    <List pagination={false}>
+    <List pagination={false} perPage={1000}>
         <Datagrid bulkActionButtons={false}>
             <TextField source="id"/>
             <TextField source="name"/>
