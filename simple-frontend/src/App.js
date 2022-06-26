@@ -26,7 +26,7 @@ export default function App() {
 
 
 const ResourcesList = () => (
-    <List>
+    <List pagination={false}>
         <Datagrid bulkActionButtons={false}>
             <TextField source="id"/>
             <TextField source="name"/>
